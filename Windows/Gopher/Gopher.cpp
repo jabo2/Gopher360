@@ -565,12 +565,12 @@ void Gopher::handleScrolling()
   // Handle dead zone
   float magnitudeX = abs(tx);
   float magnitudeY = abs(ty);
-  if (magnitudeX > SCROLL_DEAD_ZONE)
+  if (magnitudeX > SCROLL_DEAD_ZONE && magnitudeX > magnitudeY)
   {
     int scrollX = tx * getMult(magnitudeX, SCROLL_DEAD_ZONE) * SCROLL_SPEED;
     mouseEvent(MOUSEEVENTF_HWHEEL, scrollX);
   }
-  if (magnitudeY > SCROLL_DEAD_ZONE)
+  else if (magnitudeY > SCROLL_DEAD_ZONE)
   {
     int scrollY = ty * getMult(magnitudeY, SCROLL_DEAD_ZONE) * SCROLL_SPEED;
     mouseEvent(MOUSEEVENTF_WHEEL, scrollY);
