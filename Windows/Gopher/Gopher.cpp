@@ -85,34 +85,34 @@ void Gopher::loadConfigFile()
   //--------------------------------
   // Configuration bindings
   //--------------------------------
-  CONFIG_MOUSE_LEFT = strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_LEFT").c_str(), 0, 0);
-  CONFIG_MOUSE_RIGHT = strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_RIGHT").c_str(), 0, 0);
-  CONFIG_MOUSE_MIDDLE = strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_MIDDLE").c_str(), 0, 0);
-  CONFIG_HIDE = strtol(cfg.getValueOfKey<std::string>("CONFIG_HIDE").c_str(), 0, 0);
-  CONFIG_DISABLE = strtol(cfg.getValueOfKey<std::string>("CONFIG_DISABLE").c_str(), 0, 0);
-  CONFIG_DISABLE_VIBRATION = strtol(cfg.getValueOfKey<std::string>("CONFIG_DISABLE_VIBRATION").c_str(), 0, 0);
-  CONFIG_SPEED_CHANGE = strtol(cfg.getValueOfKey<std::string>("CONFIG_SPEED_CHANGE").c_str(), 0, 0);
-  CONFIG_OSK = strtol(cfg.getValueOfKey<std::string>("CONFIG_OSK").c_str(), 0, 0);
+  CONFIG_MOUSE_LEFT = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_LEFT").c_str(), 0, 0);
+  CONFIG_MOUSE_RIGHT = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_RIGHT").c_str(), 0, 0);
+  CONFIG_MOUSE_MIDDLE = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_MIDDLE").c_str(), 0, 0);
+  CONFIG_HIDE = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_HIDE").c_str(), 0, 0);
+  CONFIG_DISABLE = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_DISABLE").c_str(), 0, 0);
+  CONFIG_DISABLE_VIBRATION = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_DISABLE_VIBRATION").c_str(), 0, 0);
+  CONFIG_SPEED_CHANGE = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_SPEED_CHANGE").c_str(), 0, 0);
+  CONFIG_OSK = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_OSK").c_str(), 0, 0);
 
   //--------------------------------
   // Controller bindings
   //--------------------------------
-  GAMEPAD_DPAD_UP = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_DPAD_UP").c_str(), 0, 0);
-  GAMEPAD_DPAD_DOWN = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_DPAD_DOWN").c_str(), 0, 0);
-  GAMEPAD_DPAD_LEFT = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_DPAD_LEFT").c_str(), 0, 0);
-  GAMEPAD_DPAD_RIGHT = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_DPAD_RIGHT").c_str(), 0, 0);
-  GAMEPAD_START = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_START").c_str(), 0, 0);
-  GAMEPAD_BACK = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_BACK").c_str(), 0, 0);
-  GAMEPAD_LEFT_THUMB = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_LEFT_THUMB").c_str(), 0, 0);
-  GAMEPAD_RIGHT_THUMB = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_RIGHT_THUMB").c_str(), 0, 0);
-  GAMEPAD_LEFT_SHOULDER = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_LEFT_SHOULDER").c_str(), 0, 0);
-  GAMEPAD_RIGHT_SHOULDER = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_RIGHT_SHOULDER").c_str(), 0, 0);
-  GAMEPAD_A = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_A").c_str(), 0, 0);
-  GAMEPAD_B = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_B").c_str(), 0, 0);
-  GAMEPAD_X = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_X").c_str(), 0, 0);
-  GAMEPAD_Y = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_Y").c_str(), 0, 0);
-  GAMEPAD_TRIGGER_LEFT = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_TRIGGER_LEFT").c_str(), 0, 0);
-  GAMEPAD_TRIGGER_RIGHT = strtol(cfg.getValueOfKey<std::string>("GAMEPAD_TRIGGER_RIGHT").c_str(), 0, 0);
+  GAMEPAD_DPAD_UP = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_DPAD_UP").c_str(), 0, 0);
+  GAMEPAD_DPAD_DOWN = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_DPAD_DOWN").c_str(), 0, 0);
+  GAMEPAD_DPAD_LEFT = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_DPAD_LEFT").c_str(), 0, 0);
+  GAMEPAD_DPAD_RIGHT = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_DPAD_RIGHT").c_str(), 0, 0);
+  GAMEPAD_START = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_START").c_str(), 0, 0);
+  GAMEPAD_BACK = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_BACK").c_str(), 0, 0);
+  GAMEPAD_LEFT_THUMB = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_LEFT_THUMB").c_str(), 0, 0);
+  GAMEPAD_RIGHT_THUMB = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_RIGHT_THUMB").c_str(), 0, 0);
+  GAMEPAD_LEFT_SHOULDER = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_LEFT_SHOULDER").c_str(), 0, 0);
+  GAMEPAD_RIGHT_SHOULDER = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_RIGHT_SHOULDER").c_str(), 0, 0);
+  GAMEPAD_A = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_A").c_str(), 0, 0);
+  GAMEPAD_B = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_B").c_str(), 0, 0);
+  GAMEPAD_X = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_X").c_str(), 0, 0);
+  GAMEPAD_Y = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_Y").c_str(), 0, 0);
+  GAMEPAD_TRIGGER_LEFT = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_TRIGGER_LEFT").c_str(), 0, 0);
+  GAMEPAD_TRIGGER_RIGHT = (WORD)strtol(cfg.getValueOfKey<std::string>("GAMEPAD_TRIGGER_RIGHT").c_str(), 0, 0);
 
   //--------------------------------
   // Advanced settings
@@ -455,24 +455,6 @@ int sgn(T val)
 }
 
 // Description:
-//   Determines if the thumbstick value is valid and converts it to a float.
-//
-// Params:
-//   t  Analog thumbstick value to check and convert
-//
-// Returns:
-//   If the value is valid, t will be returned as-is as a float. If the value is 
-//     invalid, 0 will be returned.
-float Gopher::getDelta(short t)
-{
-  //filter non-32768 and 32767, wireless ones can glitch sometimes and send it to the edge of the screen, it'll toss out some HUGE integer even when it's centered
-  if (t > 32767) t = 0;
-  if (t < -32768) t = 0;
-
-  return t;
-}
-
-// Description:
 //   Calculates a multiplier for an analog thumbstick based on the update rate.
 //
 // Params:
@@ -504,20 +486,20 @@ void Gopher::handleMouseMovement()
   POINT cursor;
   GetCursorPos(&cursor);
 
-  short tx;
-  short ty;
+  int tx;
+  int ty;
 
   if (SWAP_THUMBSTICKS == 0)
   {
     // Use left stick
-    tx = getDelta(_currentState.Gamepad.sThumbLX);
-    ty = getDelta(_currentState.Gamepad.sThumbLY);
+    tx = _currentState.Gamepad.sThumbLX;
+    ty = _currentState.Gamepad.sThumbLY;
   }
   else
   {
     // Use right stick
-    tx = getDelta(_currentState.Gamepad.sThumbRX);
-    ty = getDelta(_currentState.Gamepad.sThumbRY);
+    tx = _currentState.Gamepad.sThumbRX;
+    ty = _currentState.Gamepad.sThumbRY;
   }
 
   float x = cursor.x + _xRest;
@@ -549,25 +531,25 @@ void Gopher::handleMouseMovement()
 //   Controls the scroll wheel movement by reading the right thumbstick.
 void Gopher::handleScrolling()
 {
-  float tx;
-  float ty;
+  int tx;
+  int ty;
   
   if (SWAP_THUMBSTICKS == 0)
   {
     // Use right stick
-    tx = getDelta(_currentState.Gamepad.sThumbRX);
-    ty = getDelta(_currentState.Gamepad.sThumbRY);
+    tx = _currentState.Gamepad.sThumbRX;
+    ty = _currentState.Gamepad.sThumbRY;
   }
   else
   {
     // Use left stick
-    tx = getDelta(_currentState.Gamepad.sThumbLX);
-    ty = getDelta(_currentState.Gamepad.sThumbLY);
+    tx = _currentState.Gamepad.sThumbLX;
+    ty = _currentState.Gamepad.sThumbLY;
   }
 
   // Handle dead zone
-  float magnitudeX = abs(tx);
-  float magnitudeY = abs(ty);
+  float magnitudeX = (float)abs(tx);
+  float magnitudeY = (float)abs(ty);
   if (magnitudeX > SCROLL_DEAD_ZONE && magnitudeX > magnitudeY)
   {
     int scrollX = tx * getMult(magnitudeX, SCROLL_DEAD_ZONE) * SCROLL_SPEED;
