@@ -208,8 +208,11 @@ void Gopher::loop()
     return;
   }
 
-  // Vibration
-  handleVibrationButton();
+  if (CONFIG_DISABLE_VIBRATION)
+  {
+    // Vibration
+    handleVibrationButton();
+  }
 
   // Mouse functions
   handleMouseMovement();
