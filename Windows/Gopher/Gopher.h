@@ -39,6 +39,11 @@ private:
   float _xRest = 0.0f;
   float _yRest = 0.0f;
 
+  POINT ptCursorSave = {
+	  0,
+	  0 
+  };
+
   bool _disabled = false;           // Disables the Gopher controller mapping.
   bool _vibrationDisabled = false;  // Prevents Gopher from producing controller vibrations. 
   bool _hidden = false;             // Gopher main window visibility.
@@ -53,6 +58,7 @@ private:
   DWORD CONFIG_MOUSE_LEFT = NULL;
   DWORD CONFIG_MOUSE_RIGHT = NULL;
   DWORD CONFIG_MOUSE_MIDDLE = NULL;
+  DWORD CONFIG_RESTORE_CURSOR = NULL;
   
   // Gopher Settings
   WORD CONFIG_HIDE = NULL;
@@ -101,6 +107,8 @@ public:
   void pulseVibrate(const int duration, const int l, const int r) const;
 
   void toggleWindowVisibility();
+
+  void restoreCursorPos();
 
   void setWindowVisibility(const bool& hidden) const;
 

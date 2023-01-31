@@ -88,6 +88,7 @@ void Gopher::loadConfigFile()
   CONFIG_MOUSE_LEFT = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_LEFT").c_str(), 0, 0);
   CONFIG_MOUSE_RIGHT = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_RIGHT").c_str(), 0, 0);
   CONFIG_MOUSE_MIDDLE = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_MOUSE_MIDDLE").c_str(), 0, 0);
+  CONFIG_RESTORE_CURSOR = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_RESTORE_CURSOR").c_str(), 0, 0);
   CONFIG_HIDE = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_HIDE").c_str(), 0, 0);
   CONFIG_DISABLE = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_DISABLE").c_str(), 0, 0);
   CONFIG_DISABLE_VIBRATION = (WORD)strtol(cfg.getValueOfKey<std::string>("CONFIG_DISABLE_VIBRATION").c_str(), 0, 0);
@@ -229,6 +230,16 @@ void Gopher::loop()
   if (CONFIG_MOUSE_MIDDLE)
   {
     mapMouseClick(CONFIG_MOUSE_MIDDLE, MOUSEEVENTF_MIDDLEDOWN, MOUSEEVENTF_MIDDLEUP);
+  }
+
+  // Put mouse cursor back to last location
+  if (CONFIG_RESTORE_CURSOR) 
+  {
+    setXboxClickState(CONFIG_RESTORE_CURSOR);
+    if (_xboxClickIsDown[CONFIG_RESTORE_CURSOR])
+    {
+      restoreCursorPos();
+    }
   }
 
   // Hides the console
@@ -435,6 +446,20 @@ void Gopher::toggleWindowVisibility()
   _hidden = !_hidden;
   printf("Window %s\n", _hidden ? "hidden" : "unhidden");
   setWindowVisibility(_hidden);
+}
+
+// Description:
+//   Restore the previous cursos position, the first time this event is
+//   fired it initializes the location to be restored
+
+void Gopher::restoreCursorPos()
+{
+    POINT pt;
+    GetCursorPos(&pt);
+    if (ptCursorSave.x > 0 && ptCursorSave.y > 0) {
+        SetCursorPos(ptCursorSave.x, ptCursorSave.y);
+    }
+    ptCursorSave = pt;
 }
 
 // Description:
