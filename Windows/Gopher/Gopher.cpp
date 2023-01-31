@@ -683,17 +683,34 @@ void Gopher::mapKeyboard(DWORD STATE, WORD key)
   if (_xboxClickIsDown[STATE])
   {
     inputKeyboardDown(key);
-
+    
     // Add key to the list of pressed keys.
     _pressedKeys.push_back(key);
+  }
+  else if (std::find(_pressedKeys.begin(), _pressedKeys.end(), key) != _pressedKeys.end()) {
+      bool direction = false;
+      switch (key) {
+      case VK_DOWN:
+      case VK_UP:
+      case VK_LEFT:
+      case VK_RIGHT:
+      case VK_TAB:
+          direction = true;
+          break;
+      }
+      if (_xboxClickIsDownLong[STATE] && direction) {
+          inputKeyboardUp(key);
+          Sleep(25);
+          inputKeyboardDown(key);
+      }
   }
 
   if (_xboxClickIsUp[STATE])
   {
-    inputKeyboardUp(key);
+      inputKeyboardUp(key);
 
-    // Remove key from the list of pressed keys.
-    erasePressedKey(key);
+      // Remove key from the list of pressed keys.
+      erasePressedKey(key);
   }
 }
 
